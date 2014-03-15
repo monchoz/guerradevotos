@@ -6,11 +6,11 @@ Guerra de Votos es una aplicacion web en la cual puedes postular a un personaje 
 Tecnologias utilizadas:
 
 Python / Django
-HTML5, CSS3, JS
-JQuery
-Node JS
-Bootstap
-Stylus
-Nib
-Google App Engine
+HTML5, CSS3, JS,
+JQuery,
+Node JS,
+Bootstap,
+Stylus,
+Nib,
+Google App Engine,
 Google Cloud Engine
