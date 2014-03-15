@@ -1,9 +1,61 @@
 @import 'nib'
 @import 'nib/gradients'
+/* ======= IconMoon fonts ======== */
+@font-face
+	font-family 'pajarito'
+	src url('../fonts/pajarito.eot?45uxuz')
+	src url('../fonts/pajarito.eot?#iefix45uxuz') format('embedded-opentype'),
+		url('../fonts/pajarito.woff?45uxuz') format('woff'),
+		url('../fonts/pajarito.ttf?45uxuz') format('truetype'),
+		url('../fonts/pajarito.svg?45uxuz#pajarito') format('svg')
+	font-weight normal
+	font-style normal
+
+[class^="icon-"], [class*=" icon-"]
+	font-family 'pajarito'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	font-size 1em
+	text-transform none
+	line-height 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+.icon-twitter:hover
+	color #fa6900
+	background white
+	background-size 50px 50px
+
+.icon-twitter:before
+	content "\e600"
+/* ============================== */
+
+html
+	position relative
+	min-height 100%
 
 span
 	color white
 	font 2em 'Myriad Pro'
+
+body 
+	margin-bottom 200px
+
+a:hover
+	text-decoration none
+
+#footer
+	color white 
+	position absolute
+	bottom 0
+	width 100%
+	height 120px
+	background-color #fa6900
+
 
 .btn-duel
 	font 2em 'Myriad Pro'
@@ -44,11 +96,16 @@ span
 	padding 10px
 
 
-.challenging-score
-	color #1c82ba
+.challenging-score-win
+	color #2ecc71
 	font-size 5em
 	font-family 'Arial Rounded MT Bold' bold
 
+.challenging-score-loose
+	color #ef5656
+	font-size 5em
+	font-family 'Arial Rounded MT Bold' bold
+	
 .challenging-score-separator
 	color #b7b6b6
 	font-size 5em
@@ -80,6 +137,9 @@ span
 
 .dropdown-menu
 	font-size 20px
+
+.footer-content
+	padding-top 15px
 
 .main-nav
 	background-color #fa6900 !important
