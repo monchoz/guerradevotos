@@ -3,7 +3,7 @@ Guerra de Votos
 
 Guerra de Votos es una aplicacion web en la cual puedes postular a un personaje y competir contra otros para saber quien es mas popular, el mundo decide el ganador por medio de votaciones.
 
-Tecnologias utilizadas:
+Desarrollado utilizando:
 
 Python / Django
 HTML5, CSS3, JS,
