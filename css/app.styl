@@ -25,13 +25,13 @@
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
-.icon-twitter:hover
-	color #fa6900
-	background white
-	background-size 50px 50px
-
-.icon-twitter:before
-	content "\e600"
+.icon-twitter
+	padding 5px
+	&:hover
+		color #fa6900
+		background white
+	&:before
+		content "\e600"
 /* ============================== */
 
 html
@@ -40,22 +40,25 @@ html
 
 span
 	color white
-	font 2em 'Myriad Pro'
+	font 2em 'Helvetica'
 
 body 
 	margin-bottom 200px
+a
+	color white
 
 a:hover
+	color #fa6900
+	background white
 	text-decoration none
 
 #footer
+	background linear-gradient(bottom, #fa6900, 90% #fa6900, 10% #BF4D28)
 	color white 
-	position absolute
 	bottom 0
+	height 12%
+	position absolute
 	width 100%
-	height 120px
-	background-color #fa6900
-
 
 .btn-duel
 	font 2em 'Myriad Pro'
@@ -67,11 +70,27 @@ a:hover
 	width 150px
 
 
-.challenging-name
+.challenger
+	margin-bottom 5%
+	width 310px
+
+.challengers-container
+	padding-left 20%
+	
+.challenger-description span
 	color #1c82ba
-	font-family 'Crete Round' serif
-	font-size 2em
-	margin-top 1em
+	font-family 'Arial Rounded MT Bold' serif
+	font-size 1.5em
+	word-wrap break-word
+
+.challenging-name1
+	color #1c82ba
+	font-family 'Arial Rounded MT Bold' serif
+
+.challenging-name2
+	color #1c82ba
+	font-family 'Arial Rounded MT Bold' serif
+	float right
 
 .challenging-title
 	color #1c82ba
@@ -90,11 +109,26 @@ a:hover
 
 	&:hover
 		transform scale(1)
+
+.challenging-picture-duel
+	border-radius 50%
+	background-size 300px 300px
+	height 240px
+	transition transform 0.3s ease
+	transform scale(0.8)
+	width 240px
+
+	&:hover
+		cursor pointer
   
 .challenging-stats
 	margin-bottom 1em
 	padding 10px
 
+.challenging-stats-duel
+	display inline-block
+	font-size 3em
+	width 455px
 
 .challenging-score-win
 	color #2ecc71
@@ -103,8 +137,15 @@ a:hover
 
 .challenging-score-loose
 	color #ef5656
-	font-size 5em
 	font-family 'Arial Rounded MT Bold' bold
+	font-size 5em
+	float right
+	margin-right 5%
+
+.challenging-score-loose2
+	color #ef5656
+	font-family 'Arial Rounded MT Bold' bold
+	font-size 5em
 	
 .challenging-score-separator
 	color #b7b6b6
@@ -112,14 +153,14 @@ a:hover
 	font-family 'Arial'
 	margin 0 10%
 
-.todays-duel-image
-	text-align center
-
 .duel
 	border 1px solid #b7b6b6
 	box-shadow #353434 3px 3px 2px
-	margin 25px auto 5px 10%
+	margin 25px auto 10px 40px
 	width 400px
+
+.duel-detail
+	text-align center
 
 .duels-row-top
 	background #6eceb4
@@ -135,11 +176,25 @@ a:hover
 	height 60px
 	width 60px
 
+.duel-image-challenge
+	margin-top 15%
+	padding-left 0
+
 .dropdown-menu
 	font-size 20px
 
 .footer-content
-	padding-top 15px
+	color white
+	display inline-block
+	font-size 16px
+	padding-top 30px
+
+.footer-copyright
+	float left
+
+.footer-support
+	margin-left 2em
+	float right
 
 .main-nav
 	background-color #fa6900 !important
@@ -151,8 +206,8 @@ a:hover
 .navbar-brand
 	background-color black
 	border-top-right-radius 100px
-	height 90px
-	width 30%
+	height 89px
+	width 270px
 	&:hover
 		background-color black !important
 
@@ -179,6 +234,9 @@ a:hover
 .social-button
 	display inline-block
 	float right
+
+.todays-duel-image
+	text-align center
 
 
 
