@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Guerra de Votos</title>
+      <title>Crear Competidor - Guerra de Votos</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/app.css" rel="stylesheet">
       <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
@@ -31,37 +31,31 @@
       </div>
     </div><!-- /.container-fluid -->
   </nav>
-
   <div class="container">
     <div class="row">
       <div class="top-image">
-        <img src="img/duelo-ribbon.png" alt="Duelos del Dia">
+        <img src="img/competidor.png" alt="Duelos del Dia">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-5 duel">
-        <div class="row duels-row-top">
-          <div class="col-md-12">
-              <img class="challenging-picture" src="img/naruto2.png" alt="">
-              <img class="duel-image" src="img/vs.png" alt="Ramon">
-              <img class="challenging-picture" src="img/sanchez.jpg" alt="">
-          </div>
+    <div style="margin:5%;" class="row">
+      <div class="col-md-8 col-md-offset-3">
+        <div style="text-align:center;" class="col-md-4">
+          <img id="upload-image" src="img/add_image.png" alt="" class="img-circle">
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p class="challenging-title">Marcador</p>
-            <div class="challenging-stats">
-              <span class="challenging-score-win">135</span>
-              <span class="challenging-score-separator">|</span>
-              <span class="challenging-score-loose">95</span>
-            </div>
-            <div class="social-section">
-              <div class="social-shares">Social share buttons</div>
-              <button type="submit" class="btn btn-primary btn-lg social-button">Participar</button>
-            </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="opponentName">Nombre del Competidor</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="opponentName">Descripcion</label>
+            <textarea class="form-control" rows="3" placeholder="Algo que describa a tu contrincante"></textarea>
           </div>
         </div>
       </div>
+    </div>
+    <div style="text-align:center;" class="row">
+      <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
     </div>
   </div>
   <div id="footer">

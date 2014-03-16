@@ -48,18 +48,29 @@ a
 	color white
 
 a:hover
-	color #fa6900
-	background white
-	text-decoration none
+	color white
+
+#comment
+	margin-bottom 30px
 
 #footer
 	background linear-gradient(bottom, #fa6900, 90% #fa6900, 10% #BF4D28)
 	color white 
 	bottom 0
-	height 12%
+	height 15%
 	position absolute
 	width 100%
 
+#upload-image
+	// border 1px solid gray
+	height 165px
+	width 165px
+	margin-bottom 2em
+	&:hover
+		border 1px solid gray
+		cursor pointer
+		opacity 0.8
+		
 .btn-duel
 	font 2em 'Myriad Pro'
 	margin 15px 20px 0 0
@@ -68,7 +79,6 @@ a:hover
 	font-size 2em
 	height 60px
 	width 150px
-
 
 .challenger
 	margin-bottom 5%
@@ -154,10 +164,27 @@ a:hover
 	margin 0 10%
 
 .duel
-	border 1px solid #b7b6b6
 	box-shadow #353434 3px 3px 2px
 	margin 25px auto 10px 40px
 	width 400px
+
+.duel-comment
+	height 120px
+	margin-left 25%
+	width auto
+	img
+		border-radius 50%
+		background-size 100px 100px
+		float left
+		height 90px
+		transform scale(0.8)
+		width 90px
+
+.duel-user-comment
+	float left
+	margin 1% 0 0 2%
+	width 60%
+	word-wrap break-word
 
 .duel-detail
 	text-align center
@@ -235,9 +262,11 @@ a:hover
 	display inline-block
 	float right
 
-.todays-duel-image
+.top-image
 	text-align center
-
+	img
+		height 10%
+		width 60%
 
 
 @import app-responsive
