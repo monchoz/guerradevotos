@@ -8,33 +8,34 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/app.css" rel="stylesheet">
       <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
     </head>
     <body>
     <nav class="navbar navbar-default navbar-static-top main-nav" role="navigation">
-    <div class="container-fluid">
        <a class="navbar-brand" href="#"><img src="img/guerradevotoslogo.png" alt="Guerra de Votos"></a>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-           <li><button type="submit" class="btn btn-primary btn-lg btn-duel">Duelo!</button></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown"><img class="profile-image" src="img/avatar.jpg" alt="Ramon">
-            <span>ramon</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Editar Perfil</a></li>
-              <li><a href="#">Mis Duelos</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Cerrar Sesion</a></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li><button type="submit" class="btn btn-primary btn-lg btn-duel">Duelos</button></li>
+            <li><button type="submit" class="btn btn-primary btn-lg btn-duel">Crear Duelo!</button></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown"><img class="profile-image" src="img/avatar.jpg" alt="Ramon">
+              <span>ramon</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Editar Perfil</a></li>
+                <li><a href="#">Mis Duelos</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Cerrar Sesion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div><!-- /.navbar-collapse -->
-      </div>
-    </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
     <div class="row">
       <div class="top-image">
-        <img src="img/competidor.png" alt="Duelos del Dia">
+        <img src="img/competidor.png" alt="Crear Competidor">
       </div>
     </div>
     <div style="margin:5%;" class="row">
@@ -51,11 +52,10 @@
             <label for="opponentName">Descripcion</label>
             <textarea class="form-control" rows="3" placeholder="Algo que describa a tu contrincante"></textarea>
           </div>
+            <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+            <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
         </div>
       </div>
-    </div>
-    <div style="text-align:center;" class="row">
-      <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
     </div>
   </div>
   <div id="footer">
