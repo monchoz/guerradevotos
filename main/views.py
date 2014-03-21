@@ -13,5 +13,12 @@ def login(request):
 
 @login_required(login_url='/')
 def main(request):
-	return render_to_response('main.html',context_instance=RequestContext(request))	
+	return render_to_response('main.html',context_instance=RequestContext(request))
 
+@login_required(login_url='/')
+def CrearCompetidor(request):
+	return render_to_response('crear-competidor.html',context_instance=RequestContext(request))		
+
+@login_required(login_url='/')
+def BuscarOponente(request):
+	return	 render_to_response('buscar-oponente.html',context_instance=RequestContext(request))

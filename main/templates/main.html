@@ -1,33 +1,11 @@
 {% extends 'base.html' %}
-  {% block title %}¡Bienvenido a Guerra de Votos! {% endblock %}
-    {% block nav %}
-    <nav class="navbar navbar-default navbar-static-top main-nav" role="navigation">
-       <a class="navbar-brand" href="#"><img src="img/guerradevotoslogo.png" alt="Guerra de Votos"></a>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav navbar-right">
-            <li><button type="submit" class="btn btn-primary btn-lg btn-duel">Duelos</button></li>
-            <li><button type="submit" class="btn btn-primary btn-lg btn-duel">Crear Duelo!</button></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown"><img class="profile-image" src="img/avatar.jpg" alt="Ramon">
-              <span>ramon</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Editar Perfil</a></li>
-                <li><a href="#">Mis Duelos</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Cerrar Sesion</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-    {% endblock %}
+  {% block title %}Guerra de Votos{% endblock %}
     {% block content %}
+    {% load staticfiles %}
     <div class="container-fluid">
       <div class="row">
         <div class="top-image">
-          <img src="img/duelo-dia.png" alt="Duelos del Dia">
+          <img src="{% static "img/duelo-dia.png" %}" alt="Duelos del Dia">
         </div>
       </div>
       <div class="row">
@@ -35,7 +13,7 @@
           <div class="row duels-row-top">
             <div class="col-md-12">
                 <img class="challenging-picture" src="img/naruto2.png" alt="">
-                <img class="duel-image" src="img/vs.png" alt="Ramon">
+                <img class="duel-image" src="{% static "img/vs.png" %}" alt="Duelo Guerra de Votos">
                 <img class="challenging-picture" src="img/sanchez.jpg" alt="">
             </div>
           </div>
