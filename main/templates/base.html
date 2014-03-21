@@ -1,0 +1,30 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{% block title %}{% endblock %}</title>
+      {% load staticfiles %}
+      <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+      <link href="{% static "css/app.css" %}" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Lilita+One' rel='stylesheet' type='text/css'>
+    </head>
+    {% block nav %}{% endblock %}
+    {% block content %}{% endblock %}
+  <div id="login-footer">
+      <div class="container footer-content">
+        <div class="footer-copyright">
+          <p>&copy 2014 Ramon Zuniga - <a target="_blank" href="https://twitter.com/djmohnz"><span class="icon-twitter"> djmohnz</span></a></p>
+        </div>
+        <div class="footer-support">
+          <p><a href="">Soporte</a> - <a href="">Enviar comentarios</a> - <a href="">Acerca de</a></p>
+        </div>
+      </div>
+  </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="{% static "js/bootstrap.min.js" %}"></script>
+      <script src="{% static "js/app.js" %}"></script>
+  </html>

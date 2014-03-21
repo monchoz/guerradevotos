@@ -1,0 +1,32 @@
+ {% extends 'base.html' %}
+  {% block title %}Guerra de Votos{% endblock %}
+  {% block nav %}
+  <body id="login-background">
+  {% endblock %}
+  {% block content %}
+  {% load staticfiles %}
+  <div class="container-fluid">
+    <div class="row">
+        <img id="login-top-image" src="{% static "img/top-image.png" %}" alt="">
+    </div>
+    <div style="margin-top:5%;" class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1">
+              <img id="login-logo" src="{% static "img/logo.png" %}" alt="Guerra de Votos">
+          </div>
+          <div class="col-md-5">
+            <div id="login-panel" class="panel panel-default">
+              <div class="panel-body">
+                <h2>¡Inicia Sesion o Registrate!</h2>
+                <div id="login">
+                 <a id="login-button" href="{% url 'socialauth_begin' 'facebook' %}"><span class="icon-facebook"></span>ENTRAR CON <strong>FACEBOOK</strong></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+  {% endblock %}
