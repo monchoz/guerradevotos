@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect
 from django.template import RequestContext
+from social_auth.models import UserSocialAuth
 
 def login(request):
 	if request.user.is_authenticated():
@@ -22,3 +23,8 @@ def CrearCompetidor(request):
 @login_required(login_url='/')
 def BuscarOponente(request):
 	return	 render_to_response('buscar-oponente.html',context_instance=RequestContext(request))
+
+@login_required(login_url="/")
+def log_out(request):
+	logout(request)
+	return redirect('home')

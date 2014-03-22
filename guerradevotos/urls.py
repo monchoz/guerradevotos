@@ -11,6 +11,6 @@ urlpatterns = patterns('',
     url(r'^main/$', 'main.views.main', name='main'),
     url(r'^crear-competidor/$', 'main.views.CrearCompetidor', name='CrearCompetidor'),
     url(r'^buscar-oponente/$', 'main.views.BuscarOponente', name='BuscarOponente'),
-    # url(r'^log_out/$', 'main.views.log_out'),
+    url(r'^log_out/$', 'main.views.log_out'),
     url(r'^admin/', include(admin.site.urls)),
 )

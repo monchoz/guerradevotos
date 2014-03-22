@@ -1,4 +1,4 @@
- {% extends 'base.html' %}
+ {% extends 'main.html' %}
   {% block title %} Crear Competidor - Guerra de Votos {% endblock %}
   {% block content %}
   {% load staticfiles %}
@@ -23,7 +23,6 @@
             <textarea class="form-control" rows="3" placeholder="Algo que describa a tu contrincante"></textarea>
           </div>
             <a href="{% url 'BuscarOponente' %}" class="btn btn-primary btn-lg">Continuar</a>
-            <a href="/" class="btn btn-danger btn-lg">Cancelar</a>
         </div>
       </div>
     </div>

@@ -53,21 +53,32 @@ AUTHENTICATION_BACKENDS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'social_auth.context_processors.social_auth_by_type_backends',
+    'guerradevotos.context_processor.user_picture',
 )
-
-SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook',)
-SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
-
-# FACEBOOK KEYS
 
 FACEBOOK_APP_ID='269238803250226'
 FACEBOOK_API_SECRET='d0e17ed2e711e8437f0ccc27c2d0fa4b'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/main/'
-LOGIN_ERROR_URL = 'login-error/'
+LOGIN_ERROR_URL = '/login-error/'
 MAIN = '/'
 
+SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook',)
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+# SOCIAL_AUTH_PIPELINE = (
+#     'social_auth.backends.pipeline.social.social_auth_user',
+#     'social_auth.backends.pipeline.associate.associate_by_email',
+#     'social_auth.backends.pipeline.user.get_username',
+#     'social_auth.backends.pipeline.user.create_user',
+#     'social_auth.backends.pipeline.social.associate_user',
+#     'social_auth.backends.pipeline.user.update_user_details',
+#     'guerradevotos.pipeline.update_avatar',
+# )
+ 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
