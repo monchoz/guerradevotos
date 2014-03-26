@@ -1,0 +1,346 @@
+@import 'nib'
+@import 'nib/gradients'
+/* ======= IconMoon fonts ======== */
+@font-face
+	font-family 'pajarito'
+	src url('../fonts/pajarito.eot?3z0op6')
+	src url('../fonts/pajarito.eot?#iefix3z0op6') format('embedded-opentype'),
+		url('../fonts/pajarito.woff?3z0op6') format('woff'),
+		url('../fonts/pajarito.ttf?3z0op6') format('truetype'),
+		url('../fonts/pajarito.svg?3z0op6#pajarito') format('svg')
+	font-weight normal
+	font-style normal
+
+[class^="icon-"], [class*=" icon-"]
+	font-family 'pajarito'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	font-size 1em
+	text-transform none
+	line-height 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+.icon-facebook
+	padding 15px
+	&:before
+		content "\e601"
+		font-size 1.5em		
+
+.icon-twitter
+	padding 5px
+	&:hover
+		color #fa6900
+		background white
+	&:before
+		content "\e600"
+/* ============================== */
+
+html
+	position relative
+	min-height 100%
+
+span
+	color white
+	font 2em 'Helvetica'
+
+body 
+	margin-bottom 200px
+a
+	color white
+
+a:hover
+	color white
+
+#comment
+	margin-bottom 30px
+
+#footer
+	background linear-gradient(bottom, #fa6900, 90% #fa6900, 10% #BF4D28)
+	color white 
+	bottom 0
+	height 10%
+	position absolute
+	width 100%
+
+#login
+	margin 2em auto 2em auto
+
+#login-background
+	background #F15A24
+
+#login-button
+	background #1e62a9
+	border 1px solid #143f72
+	border-bottom-width 5px
+	border-radius 3px
+	color white
+	font 20px Arial, Helvetica, sans-serif
+	padding 15px 3% 20px 3%
+	width 350px
+	vertical-align top
+	strong
+		vertical-align top
+	&:hover
+		background #1e62c9
+		cursor pointer
+		text-decoration none
+		
+
+#login-logo
+	height 90%
+	width 90%
+
+#login-footer
+	background linear-gradient(bottom, #A53D1C, 90% #A53D1C, 10% #BF4D28)
+	color white 
+	bottom 0
+	height 15%
+	position absolute
+	width 100%
+
+#login-panel
+	background #333333
+	margin-top 20%
+	text-align center
+	img
+		height 40px
+		width 70%
+	h2
+		color #E74C3C
+	p
+		color white
+		font-size 1.5em
+
+#login-top-image
+	background-repeat repeat-x
+	height 60%
+	width 100%
+	
+#upload-image
+	height 165px
+	width 165px
+	margin-bottom 2em
+	&:hover
+		border 1px solid gray
+		cursor pointer
+		opacity 0.8
+		
+.btn-duel
+	color white !important
+	font 2em 'Bangers' cursive
+	margin 20px 20px 0 0
+	letter-spacing 0.07em
+	&:hover
+		background-color #285e8e !important
+
+.btn-duel-participate
+	font-size 2em
+	height 60px
+	width 150px
+
+.challenger
+	margin-bottom 5%
+	width 310px
+
+.challengers-container
+	padding-left 20%
+	
+.challenger-description span
+	color #1c82ba
+	font-family 'Crete Round' serif
+	font-size 1.5em
+	word-wrap break-word
+
+.challenging-name1
+	color #1c82ba
+	font-family 'Crete Round' serif
+
+.challenging-name2
+	color #1c82ba
+	font-family 'Crete Round' serif
+	float right
+
+.challenging-title
+	color #1c82ba
+	font-size 1.5em
+	font-family 'Crete Round' bold
+	margin-top 10px
+
+.challenging-picture
+	border 5px solid white
+	border-radius 50%
+	background-size 300px 300px
+	height 150px
+	transition transform 0.3s ease
+	transform scale(0.8)
+	width 150px
+
+	&:hover
+		transform scale(1)
+
+.challenging-picture-duel
+	border-radius 50%
+	background-size 300px 300px
+	height 240px
+	transition transform 0.3s ease
+	transform scale(0.8)
+	width 240px
+
+	&:hover
+		cursor pointer
+  
+.challenging-stats
+	margin-bottom 1em
+	padding 10px
+
+.challenging-stats-duel
+	display inline-block
+	font-size 3em
+	width 455px
+
+.challenging-score-win
+	color #2ecc71
+	font-size 5em
+	font-family 'Lilita one' cursive
+
+.challenging-score-loose
+	color #ef5656
+	font-family 'Lilita one' cursive
+	font-size 5em
+	float right
+	margin-right 5%
+
+.challenging-score-loose2
+	color #ef5656
+	font-family 'Lilita one' cursive
+	font-size 5em
+	
+.challenging-score-separator
+	color #b7b6b6
+	font-size 5em
+	font-family 'Arial'
+	margin 0 17%
+
+.duel
+	box-shadow #353434 3px 3px 2px
+	margin 25px auto 10px 40px
+	width 400px
+
+.duel-comment
+	height 120px
+	margin-left 25%
+	width auto
+	img
+		border-radius 50%
+		background-size 100px 100px
+		float left
+		height 90px
+		transform scale(0.8)
+		width 90px
+
+.duel-user-comment
+	float left
+	margin 1% 0 0 2%
+	width 60%
+	word-wrap break-word
+
+.duel-detail
+	text-align center
+
+.duels-row-top
+	background #6eceb4
+	height 13em
+	padding-top 1em
+
+.duels-row-bottom
+	display inline-block
+	float left
+	padding-top 1em
+
+.duel-image
+	height 60px
+	width 60px
+
+.duel-image-challenge
+	margin-top 15%
+	padding-left 0
+
+.dropdown-menu
+	font-size 18px
+
+.footer-content
+	color white
+	font-size 16px
+	padding-top 30px
+
+.footer-copyright
+	float left
+
+.footer-support
+	margin-left 2em
+	float right
+
+.icon-bar
+	background-color white !important
+
+.main-nav
+	background-color #fa6900 !important
+
+.navbar-nav>.open>a:focus
+	background-color transparent !important
+
+.navbar-brand
+	background-color black
+	height 100%
+	margin-left none !important
+	&:hover
+		background-color black !important
+
+.profile-dropdown
+	background-color transparent !important	
+	margin -10px 20px
+
+.profile-image
+	border 2px solid white
+	border-radius 500px
+	height 80px
+	width 80px
+	overflow hidden
+
+.usersearch-data
+	margin 10px
+
+.social-section
+	display inline-block
+	width 360px
+	margin-bottom 10px
+
+.social-shares
+	float left
+	margin-top 1em
+
+.social-button
+	display inline-block
+	float right
+
+.top-image
+	text-align center
+	img
+		height 10%
+		width 60%
+		margin-bottom 1em
+
+
+@import app-responsive
+
+
+
+
+
+
+	  

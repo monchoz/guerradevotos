@@ -9,15 +9,20 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates'),
 )
 
 ADMINS = {
-    ('Ramon Zuniga', 'monchoz@lazyhoundstudio.com'),
+    ('Ramon Zuniga', 'ramonzuniga9@gmail.com'),
 }
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -43,7 +48,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'main',
     'social_auth',
+    'appengine_toolkit',
 )
+
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
@@ -96,13 +103,19 @@ SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
+import appengine_toolkit
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': appengine_toolkit.config(),
 }
+
+APPENGINE_TOOLKIT = {
+    'APP_YAML': os.path.join(BASE_DIR, 'app.yaml'),
+    'BUCKET_NAME': 'gdv-bucket',
+}
+
+DEFAULT_FILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
+STATICFILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
