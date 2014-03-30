@@ -7,8 +7,8 @@ threadsafe: yes
 handlers:
 - url: /static
   static_dir: static
-- url: /img
-  static_dir: static/img
+# - url: /img
+#   static_dir: static/img
 
 libraries:
 - name: django
@@ -24,4 +24,3 @@ builtins:
 env_variables:
   DJANGO_SETTINGS_MODULE: 'guerradevotos.settings'
   DATABASE_URL: 'mysql://root@gdv-app:main-sql/gdv'
-

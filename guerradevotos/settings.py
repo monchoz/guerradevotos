@@ -15,6 +15,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates'),
 )
