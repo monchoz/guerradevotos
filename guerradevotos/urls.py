@@ -16,4 +16,4 @@ urlpatterns = patterns('',
     url(r'^log_out/$', 'main.views.log_out'),
     url(r'^users-list/$', 'main.views.SearchUsers', name='SearchUsers'),
     url(r'^admin/', include(admin.site.urls)),
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+ 	) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

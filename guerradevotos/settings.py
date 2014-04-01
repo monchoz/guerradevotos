@@ -9,13 +9,21 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+PROJECT_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)))
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, 'static'),
+)
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates'),
@@ -37,6 +45,14 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 
 # Application definition
@@ -115,8 +131,8 @@ APPENGINE_TOOLKIT = {
     'BUCKET_NAME': 'gdv-bucket',
 }
 
-DEFAULT_FILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
-STATICFILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
+# DEFAULT_FILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
+# STATICFILE_STORAGE = 'appengine_toolkit.storage.GoogleCloudStorage'
 
 
 # Internationalization
@@ -137,3 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media files (file uploads)
+
+MEDIA_URL = '/media/'
