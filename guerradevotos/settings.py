@@ -23,6 +23,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# Change to PROJECT_ROOT before app deploy
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 TEMPLATE_DIRS = (

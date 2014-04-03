@@ -6,18 +6,19 @@ $(document).ready(function() {
 		query = $(this).val();
 		$.get('/users-list/',{userName: query}, function(data){
 			$(".users-list").remove();
-			$("#btn-create-duel").remove();
 			$(".no-results").remove();
 			$(data).insertAfter('#Users');
 			$(".loader").hide();
 		});
 	});
 
+	$.validator.addMethod('accept', function () { return true; });
+
     // Upload image
     $("#upload-image-btn").change(function(){
     	var oFReader = new FileReader();
         oFReader.readAsDataURL($(this).prop('files')[0]);
-
+        
         oFReader.onload = function (oFREvent) {
             $("#upload-image").attr("src",oFREvent.target.result);
         };
@@ -43,28 +44,33 @@ $(document).ready(function() {
 				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
 			},
 			submitHandler: function(form) {
-				$.ajax({
-					data: $(form).serialize(),
-					type: $(form).attr('method'),
+				$(form).ajaxSubmit({
 					dataType: "json",
 					url: $(form).attr('action'),
+					beforeSubmit: function(){
+						$("#btn-create-duel").prop('disabled',true);
+						$("#btn-create-duel").html('Espera...');
+					},
 					success: function(data) {
-						if (data.codigo == 1) {
-							bloquearControles(form, false);
-							mostrarMensaje(form, "<span class='alertContent'><strong>Genial!</strong> El registro se guardo correctamente.</span>", "alert-success");
-						} else if (data.codigo == 2) {
-							mostrarMensaje(form, "<span class='alertContent'><strong>Oh no :( !</strong> Ocurrio un error al guardar el registro, por favor comunicate con el administrador.</span>", "alert-danger");
-						} else if (data.codigo == 3) {
-							mostrarMensaje(form, "<span class='alertContent'><strong>Alto!</strong> ERROR, Acta duplicada.</span>", "alert-danger");
+						if (data.response_id == 1) {	
+							hideMessage()
+							cleanContent();					
+							displayMessage("<span class='alertContent'><strong>Genial!</strong> Tu competidor se registro correctamente. Una solicitud de Duelo ha sido enviada a tu contrincante.</span>", "alert-success");
+						} else if (data.response_id == 2) {
+							hideMessage();
+							displayMessage("<span class='alertContent'><strong>Oh no :( !</strong> Ocurrio un error al guardar el registro, por favor revisa los datos ingresados e intenta de nuevo.</span>", "alert-danger");
+						} else if (data.response_id == 3) {
+							hideMessage();
+							displayMessage("<span class='alertContent'><strong>Oh no :( !</strong> Ocurrio un error al guardar el registro.</span>", "alert-danger");
 						}
 					}
 				});
+				$("#btn-create-duel").prop('disabled',false);
+				$("#btn-create-duel").html('¡Comience el duelo!');
 				return false;
 			}
 		});
 	});
-
-	
 
 });
 
@@ -72,6 +78,7 @@ $(document).ready(function() {
 $(document).on('click', ".select-opponent", function (e) {
     e.preventDefault();
 	var selectedUser = $(this).closest('.users-list');
+	$(this).removeClass('btn-primary').addClass('btn-danger');
 	$("#UserD").val($(this).attr("data-oppuser"));
 	$(".users-list").each(function(){
 		$(".users-list").not(selectedUser).remove();
@@ -89,5 +96,15 @@ function displayMessage(msg, type) {
 function hideMessage() {
 	$(".alertContent").remove();
 	$(".alert").slideUp(200);
+}
+
+// Limpiar variables 
+function cleanContent() {
+	$("#upload-image").attr("src","http://localhost:8000/static/img/add_image.png");
+	$("#upload-image-btn").val('');
+	$("#CompetitorName").val('');
+	$("#CompetitorDescription").val('');
+	$("#UserD").val('');
+
 }
 

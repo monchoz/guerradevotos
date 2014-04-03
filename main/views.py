@@ -41,20 +41,25 @@ def login(request):
 		return render_to_response('login.html',context_instance=RequestContext(request))
 
 @login_required(login_url='/')
-def AddCompetitor(request):
+def IngresarCompetidor(request):
 	if request.is_ajax():
-		if reques.method == 'POST':
-			competitorFrm = CompetitorForm(data=request.POST)
+		if request.method == 'POST':
+			competitorFrm = CompetitorForm(request.POST, request.FILES)
 			if competitorFrm.is_valid():
-				u = competitorFrm.save(commit=false)
-				u.user = request.user.id
-				u.created = datetime.now()
-				u.active = 1
-				u.save()
-				result = {'code': 1, 'msg': 'Competidor se creo correctamente'}
-				return HttpResponse(simplejson.dumps(result))
+				try:
+					u = competitorFrm.save(commit=False)
+					u.user = request.user
+					u.image = competitorFrm.cleaned_data['image']
+					u.save()
+					result = {'response_id': 1, 'msg': 'Competidor se creo correctamente'}
+					return HttpResponse(simplejson.dumps(result))
+				except Exception as e:
+					print '%s (%s)' % (str(e), type(e))
+					result = {'response_id': 3, 'msg': 'Error de datos.'}
+					return HttpResponse(simplejson.dumps(result))
 			else:
-				result = {'code': 2, 'msg': 'Ocurrio un problema al intentar crear competidor'}
+				print competitorFrm.is_valid()
+				result = {'response_id': 2, 'msg': 'Formulario no valido.'}
 				return HttpResponse(simplejson.dumps(result))
 
 @login_required(login_url='/')
