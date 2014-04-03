@@ -44,13 +44,11 @@ $(document).ready(function() {
 				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
 			},
 			submitHandler: function(form) {
+				$("#btn-create-duel").prop('disabled',true);
+				$("#btn-create-duel").html('Espera...');
 				$(form).ajaxSubmit({
 					dataType: "json",
 					url: $(form).attr('action'),
-					beforeSubmit: function(){
-						$("#btn-create-duel").prop('disabled',true);
-						$("#btn-create-duel").html('Espera...');
-					},
 					success: function(data) {
 						if (data.response_id == 1) {	
 							hideMessage()
@@ -63,10 +61,10 @@ $(document).ready(function() {
 							hideMessage();
 							displayMessage("<span class='alertContent'><strong>Oh no :( !</strong> Ocurrio un error al guardar el registro.</span>", "alert-danger");
 						}
+						$("#btn-create-duel").prop('disabled',false);
+						$("#btn-create-duel").html('¡Comience el duelo!');
 					}
 				});
-				$("#btn-create-duel").prop('disabled',false);
-				$("#btn-create-duel").html('¡Comience el duelo!');
 				return false;
 			}
 		});
